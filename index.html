@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson-10-Homework</title>
+</head>
+<body>
+    
+
+    <script>
+        function add() {
+            let number = 0;
+            return function(x) {
+                return number += x;
+            }
+        }
+
+        let sum = add();
+        console.log(sum(3));
+        console.log(sum(3));
+        console.log(sum(20));
+        console.log('***********************');
+
+        function counter(number, step) {
+            let count = number;
+
+            return function(reset) {
+                if(reset) {
+                    count = number;
+                    return count;
+                }
+                return count += step;
+            }
+        }
+
+        let count = counter(3, 2);
+        console.log(count());
+        console.log(count());
+        console.log(count());
+        count(true);
+        console.log(count());
+        console.log(count());
+        let count2 = counter(1, 2);
+        console.log(count2());
+        console.log(count2());
+        console.log(count2());
+        console.log(count2());
+
+        
+    </script>
+</body>
+</html>
